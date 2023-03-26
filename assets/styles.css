@@ -1,0 +1,22 @@
+/* Mobile and Global Styles */
+/* Applies to screens smaller than 500px and above unless overwritten below */
+
+body {
+  background-color: black;
+}
+
+/* Tablet Styles */
+
+@media screen and (min-width: 500px) {
+
+
+
+}
+
+/* Desktop Styles */
+
+@media screen and (min-width: 1000px) {
+
+  
+
+}
