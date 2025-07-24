@@ -2,20 +2,72 @@
 <!--
   Created by Richard (@IcecoolR), 26/03/2023
   Visitavi is a tool that lets users favorite and mark which counties they have visited
-  Uses the REST Countries API to fetch the different countries (https://restcountries.com)
+  Uses the REST Countries API to fetch the different countries (https://leafletjs.com/index.html)
 -->
 <html lang="en">
-	<head>
-    <meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <title>Visitavi</title>
-		<link rel="stylesheet" href="assets/styles.css" />
-		<link rel="icon" href="assets/images/Globe Icon.png">
-		<script src="assets/scripts.js" defer></script>
-	</head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>Visitavi</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="icon" href="assets/images/Globe Icon.png">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script src="assets/scripts.js" defer></script>
+</head>
+
+<body>
+
+  <div class="header">
+    <h1 class="title">Visitavi 🌍</h1>
+    <p class="subtitle">Track your travels around the world</p>
+    <div class="nav-buttons">
+      <button class="nav-btn" id="mapViewBtn">Map View</button>
+      <button class="nav-btn" id="aboutBtn">About</button>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div id="mapViewSection" class="section active">
+      <div id="map"></div>
+    </div>
+
+    <div id="aboutSection" class="section">
+      <p><strong>Visitavi</strong> is your personal travel companion that helps you track and visualize your journeys
+        around the world. Whether you're a seasoned globetrotter or just starting your travel adventures, Visitavi makes
+        it easy to mark the countries you've explored and plan your future destinations.</p>
+
+      <h3>How to Use 🗺️</h3>
+      <p><strong>Click on any country</strong> on the interactive map to cycle through three states:</p>
+      <p>• <strong>Gray:</strong> Countries you haven't visited yet</p>
+      <p>• <strong>Yellow:</strong> Countries on your wishlist</p>
+      <p>• <strong>Green:</strong> Countries you've visited</p>
+
+      <h3>Features ✨</h3>
+      <p>• Interactive world map with smooth zoom and pan</p>
+      <p>• Real-time statistics tracking your travel progress</p>
+      <p>• Visual legend to understand country status at a glance</p>
+      <p>• Responsive design that works on all devices</p>
+      <p>• Data persistence - your travel data is saved locally</p>
+
+      <h3>Travel Statistics 🌟</h3>
+      <p>Keep track of your global exploration with detailed statistics including the number of countries visited,
+        countries on your wishlist, and your overall world exploration percentage.</p>
+
+      <h3>Start Your Journey 🎯</h3>
+      <p>Ready to start mapping your adventures? Switch to the Map View and begin clicking on countries to mark your
+        travels and build your personal travel story!</p>
+
+      <!-- Data -->
+
+
+    </div>
+
+  </div>
 
 
 
-  </body>
+</body>
+
 </html>

@@ -1,20 +1,29 @@
 "use strict";
 
-const country = document.getElementById("country");
-const flag = document.getElementById("flag");
-const region = document.getElementById("region");
-const subregion = document.getElementById("subregion");
+const mapViewBtn = document.getElementById("mapViewBtn");
+const aboutBtn = document.getElementById("aboutBtn");
 
-fetch("https://restcountries.com/v3.1/all?fields=name,flags,region,subregion")
-  .then((response) => {
-    if (response.ok) {
-      return response.json();
-    } else {
-      console.log("Failed to get data: " + response);
-    }
-  })
-  .then(function (data) {
+const mapViewSection = document.getElementById("mapViewSection");
+const aboutSection = document.getElementById("aboutSection");
 
-    console.log(data);
-    
-  });
+
+const mapViewBtnHandler = (e) => {
+  if (e.type == "click" || e.code == "Enter" || e.code == "NumpadEnter") {
+    mapViewSection.classList.add("active");
+    aboutSection.classList.remove("active");
+  }
+}
+
+const aboutBtnHandler = (e) => {
+  if (e.type == "click" || e.code == "Enter" || e.code == "NumpadEnter") {
+    aboutSection.classList.add("active");
+    mapViewSection.classList.remove("active");
+  }
+}
+
+
+mapViewBtn.addEventListener("click", mapViewBtnHandler);
+mapViewBtn.addEventListener("keydown", mapViewBtnHandler);
+
+aboutBtn.addEventListener("click", aboutBtnHandler);
+aboutBtn.addEventListener("keydown", aboutBtnHandler);
