@@ -7,14 +7,52 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+h3 {
+    padding: 0.1rem 0rem;
+}
+
+p {
+    padding: 0.5rem 0rem;
+}
+
+nav{
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem 0.25rem;
+}
+
+button {
+    border: 0.2rem solid;
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: #1ABC9C;
+    border-color: #FFFFFF;
+    transition: all 0.2s ease;
+}
+
+button:hover, button:focus {
+    background-color: #17A18F;
+    color: #FFFFFF;
+    transform: scale(1.1);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.2rem;
+    justify-content: space-evenly;
+    color: #ffffff;
+}
+
 .content {
-    padding: 30px;
+    padding: 3rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .section {
-    background: rgba(255, 255, 255, 0.95);
+    background-color: #1ABC9C;
     border-radius: 20px;
     padding: 30px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
@@ -38,7 +76,17 @@ body {
 
 @media screen and (min-width: 500px) {
 
+    nav{
+        gap: 2rem;
+    }
 
+    button {
+        padding: 1.5rem 2rem;
+    }
+
+    button:hover, button:focus {
+        transform: scale(1.2);
+    }
 
 }
 
@@ -46,6 +94,12 @@ body {
 
 @media screen and (min-width: 1000px) {
 
-  
+    nav{
+        gap: 4rem;
+    }
+    
+    button:hover, button:focus {
+        transform: scale(1.4);
+    }
 
 }

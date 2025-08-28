@@ -19,17 +19,19 @@
 <body>
 
   <div class="header">
-    <h1 class="title">Visitavi 🌍</h1>
-    <p class="subtitle">Track your travels around the world</p>
-    <div class="nav-buttons">
-      <button class="nav-btn" id="mapViewBtn">Map View</button>
-      <button class="nav-btn" id="aboutBtn">About</button>
-    </div>
+
+    <h1>Visitavi 🌍</h1>
+    <nav>
+      <button class="nav-btn" id="mapViewBtn" onclick="this.blur();">Map View</button>
+      <button class="nav-btn" id="aboutBtn" onclick="this.blur();">About</button>
+    </nav>
+
   </div>
 
   <div class="content">
 
     <div id="mapViewSection" class="section active">
+      <p>Map!</p>
       <div id="map"></div>
     </div>
 
@@ -39,17 +41,17 @@
         it easy to mark the countries you've explored and plan your future destinations.</p>
 
       <h3>How to Use 🗺️</h3>
-      <p><strong>Click on any country</strong> on the interactive map to cycle through three states:</p>
-      <p>• <strong>Gray:</strong> Countries you haven't visited yet</p>
-      <p>• <strong>Yellow:</strong> Countries on your wishlist</p>
-      <p>• <strong>Green:</strong> Countries you've visited</p>
+      <p><strong>Click on any country</strong> on the interactive map to cycle through three states:
+      <br>• <strong>Gray:</strong> Countries you haven't visited yet
+      <br>• <strong>Yellow:</strong> Countries on your wishlist
+      <br>• <strong>Green:</strong> Countries you've visited</p>
 
       <h3>Features ✨</h3>
-      <p>• Interactive world map with smooth zoom and pan</p>
-      <p>• Real-time statistics tracking your travel progress</p>
-      <p>• Visual legend to understand country status at a glance</p>
-      <p>• Responsive design that works on all devices</p>
-      <p>• Data persistence - your travel data is saved locally</p>
+      <p>• Interactive world map with smooth zoom and pan
+      <br>• Real-time statistics tracking your travel progress
+      <br>• Visual legend to understand country status at a glance
+      <br>• Responsive design that works on all devices
+      <br>• Data persistence - your travel data is saved locally</p>
 
       <h3>Travel Statistics 🌟</h3>
       <p>Keep track of your global exploration with detailed statistics including the number of countries visited,
@@ -65,8 +67,6 @@
     </div>
 
   </div>
-
-
 
 </body>
 
