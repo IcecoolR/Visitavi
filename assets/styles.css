@@ -4,7 +4,7 @@
 body {
     background: linear-gradient(135deg, #556cd5 0%, #764ba2 100%);
     min-height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: monospace;
 }
 
 h3 {
@@ -28,6 +28,7 @@ button {
     background-color: #1ABC9C;
     border-color: #FFFFFF;
     transition: all 0.2s ease;
+    font-size: 1.3rem;
 }
 
 button:hover, button:focus {
@@ -43,12 +44,15 @@ button:hover, button:focus {
     gap: 0.2rem;
     justify-content: space-evenly;
     color: #ffffff;
+    font-size: 1.4rem;
 }
 
 .content {
     padding: 3rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
+    font-size: 1rem;
+    font-family: georgia;
 }
 
 .section {
@@ -62,7 +66,7 @@ button:hover, button:focus {
 
 .section.active {
     display: block;
-    animation: fadeIn 0.5s ease;
+    animation: fadeIn 1s ease;
 }
 
 @keyframes fadeIn {
