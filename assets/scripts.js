@@ -32,9 +32,22 @@ aboutBtn.addEventListener("keydown", aboutBtnHandler);
 
 /* Section for interactive map */
 
-const map = L.map('map');
+const map = L.map('map', {
+  center: [47.040182144806664, 9.667968750000002],
+  zoom: 3,
+  minZoom: 2,
+  maxZoom: 5
+});
+
+var bounds = L.latLngBounds(
+  L.latLng(-90, -180), // Southwest corner
+  L.latLng(90, 180)  // Northeast corner
+);
+map.setMaxBounds(bounds);
+map.on('drag', function() {
+    map.panInsideBounds(bounds, { animate: false });
+});
 map.createPane('labels');
-map.setView({lat: 47.040182144806664, lng: 9.667968750000002}, 3);
 
 // This pane is above markers but below popups
 map.getPane('labels').style.zIndex = 650;
@@ -56,7 +69,7 @@ const cartodbAttribution = '&copy; <a href="https://www.openstreetmap.org/copyri
 // Adds country labels
 const positronLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
   noWrap: true,
-  bounds: [[-90, -180], [90, 180]],
+  bounds: [[-90, -180], [90, 180]],  
   attribution: cartodbAttribution,
 	pane: 'labels'
 }).addTo(map);
