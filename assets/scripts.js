@@ -45,16 +45,22 @@ map.getPane('labels').style.pointerEvents = 'none';
 // Sets the cartodbAttribution variable
 const cartodbAttribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attribution">CARTO</a>';
 
-// Draws country boarders
-const positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
-	attribution: cartodbAttribution
-}).addTo(map);
+
+// // Draws country boarders
+// const positron = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png', {
+//   noWrap: true,
+//   bounds: [[-90, -180], [90, 180]],
+//   attribution: cartodbAttribution
+// }).addTo(map);
 
 // Adds country labels
 const positronLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
-	attribution: cartodbAttribution,
+  noWrap: true,
+  bounds: [[-90, -180], [90, 180]],
+  attribution: cartodbAttribution,
 	pane: 'labels'
 }).addTo(map);
+
 
 // Countries
 const geojson = L.geoJson(countries).addTo(map);

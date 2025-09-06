@@ -48,7 +48,7 @@ button:hover, button:focus {
 }
 
 .content {
-    padding: 0.2rem 0.2rem;
+    padding: 0.5rem 0.2rem;
     margin: 0 auto;
     font-size: 1rem;
     font-family: georgia;
@@ -99,7 +99,7 @@ button:hover, button:focus {
     }
 
     .content {
-        padding: 0.5rem 0.5rem;
+        padding: 1rem 1rem;
     }
 
     .leaflet-container {
@@ -113,7 +113,7 @@ button:hover, button:focus {
 @media screen and (min-width: 1000px) {
 
     nav{
-        gap: 4rem;
+        gap: 3rem;
     }
     
     button:hover, button:focus {
@@ -121,7 +121,8 @@ button:hover, button:focus {
     }
     
     .content {
-        padding: 2rem 8rem;
+        max-width: 70rem;
+        padding: 1rem 6rem;
     }
 
     .leaflet-container {
