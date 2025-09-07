@@ -76,8 +76,17 @@ const positronLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_only_
 // Countries
 function featureClickHandler(feature, layer) {
   layer.on('click', function (e) {
-    console.log(e);
-    layer.setStyle({ color: "red" });
+
+    console.log(layer.feature.properties.name + ' pressed with colour ' + layer.options.color);
+    
+    if (layer.options.color.toString() == "#3388ff") {
+      layer.setStyle({ color: "#feb204" });
+    } else if (layer.options.color.toString() == "#feb204") {
+      layer.setStyle({ color:  "green" });
+    } else if (layer.options.color.toString() == "green") {
+      layer.setStyle({ color: "#3388ff" });
+    }
+
   });
 }
 
