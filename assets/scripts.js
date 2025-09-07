@@ -36,7 +36,7 @@ const map = L.map('map', {
   center: [47.040182144806664, 9.667968750000002],
   zoom: 3,
   minZoom: 2,
-  maxZoom: 7
+  maxZoom: 20
 });
 
 var bounds = L.latLngBounds(
@@ -94,21 +94,7 @@ const geojson = L.geoJson(countries, {
   onEachFeature: featureClickHandler
 }).addTo(map);
 
-// // Add popup to explain which country was pressed.
-// geojson.eachLayer((layer) => {
-//   layer.bindPopup(layer.feature.properties.name);
-// });
-
-
-
-// const handleFeatureClick = (e) => {
-
-//   if (!geoJsonRef.current) return;
-//   geoJsonRef.current.resetStyle();
-
-//   const layer = e.target;
-
-//   layer.setStyle({ color: "red" });
-// };
-
-
+// console.log(countries.features.length);
+// for (let i = 0; i < countries.features.length; i++) {
+//   console.log(countries.features[i].properties.iso_a3);
+// }
