@@ -44,9 +44,8 @@ var bounds = L.latLngBounds(
   L.latLng(90, 180)  // Northeast corner
 );
 map.setMaxBounds(bounds);
-map.on('drag', function() {
-    map.panInsideBounds(bounds, { animate: false });
-});
+map.on('drag', function() { map.panInsideBounds(bounds, { animate: false }); });
+
 map.createPane('labels');
 
 // This pane is above markers but below popups
@@ -74,12 +73,33 @@ const positronLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_only_
 	pane: 'labels'
 }).addTo(map);
 
-
 // Countries
-const geojson = L.geoJson(countries).addTo(map);
+function featureClickHandler(feature, layer) {
+  layer.on('click', function (e) {
+    console.log(e);
+    layer.setStyle({ color: "red" });
+  });
+}
 
-geojson.eachLayer((layer) => {
-  layer.bindPopup(layer.feature.properties.name);
-});
+const geojson = L.geoJson(countries, {
+  onEachFeature: featureClickHandler
+}).addTo(map);
+
+// // Add popup to explain which country was pressed.
+// geojson.eachLayer((layer) => {
+//   layer.bindPopup(layer.feature.properties.name);
+// });
+
+
+
+// const handleFeatureClick = (e) => {
+
+//   if (!geoJsonRef.current) return;
+//   geoJsonRef.current.resetStyle();
+
+//   const layer = e.target;
+
+//   layer.setStyle({ color: "red" });
+// };
 
 
