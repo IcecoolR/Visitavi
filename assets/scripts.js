@@ -36,11 +36,11 @@ const map = L.map('map', {
   center: [47.040182144806664, 9.667968750000002],
   zoom: 3,
   minZoom: 2,
-  maxZoom: 5
+  maxZoom: 7
 });
 
 var bounds = L.latLngBounds(
-  L.latLng(-90, -180), // Southwest corner
+  L.latLng(-65, -180), // Southwest corner
   L.latLng(90, 180)  // Northeast corner
 );
 map.setMaxBounds(bounds);
