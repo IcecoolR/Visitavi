@@ -73,25 +73,34 @@ const positronLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_only_
 	pane: 'labels'
 }).addTo(map);
 
+
 // Countries
 function featureClickHandler(feature, layer) {
   layer.on('click', function (e) {
 
-    console.log(layer.feature.properties.name + ' pressed with colour ' + layer.options.color);
-    
-    if (layer.options.color.toString() == "#3388ff") {
-      layer.setStyle({ color: "#feb204" });
-    } else if (layer.options.color.toString() == "#feb204") {
-      layer.setStyle({ color:  "green" });
-    } else if (layer.options.color.toString() == "green") {
-      layer.setStyle({ color: "#3388ff" });
+    console.log(layer.feature.properties.name + ' pressed with fill colour ' + layer.options.fillColor);
+
+    if (layer.options.fillColor == unvisitedColor) {
+      layer.setStyle({ fillColor: plannedColor });
+    } else if (layer.options.fillColor == plannedColor) {
+      layer.setStyle({ fillColor: visitedColor });
+    } else if (layer.options.fillColor == visitedColor) {
+      layer.setStyle({ fillColor: unvisitedColor });
     }
 
   });
 }
 
+function featureSetStyle(feature) {
+  return {
+    fillColor: unvisitedColor
+    // fillColor: feature.properties.fillColor
+  };
+}
+
 const geojson = L.geoJson(countries, {
-  onEachFeature: featureClickHandler
+  onEachFeature: featureClickHandler,
+  style: featureSetStyle
 }).addTo(map);
 
 // console.log(countries.features.length);
