@@ -6,6 +6,14 @@ const aboutBtn = document.getElementById("aboutBtn");
 const mapViewSection = document.getElementById("mapViewSection");
 const aboutSection = document.getElementById("aboutSection");
 
+var visitedStatus = new Map();
+
+if (localStorage.visitedStatus) { visitedStatus = new Map(JSON.parse(localStorage.visitedStatus)); }
+
+var unvisitedColor = '#4169E1';
+var plannedColor = '#FEB204';
+var visitedColor = '#008000';
+
 
 const mapViewBtnHandler = (e) => {
   if (e.type == "click" || e.code == "Enter" || e.code == "NumpadEnter") {
@@ -78,24 +86,47 @@ const positronLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_only_
 function featureClickHandler(feature, layer) {
   layer.on('click', function (e) {
 
-    console.log(layer.feature.properties.name + ' pressed with fill colour ' + layer.options.fillColor);
+    console.log('');
+    console.log(layer.feature.properties.name + '/' + layer.feature.properties.iso_a3 + ' pressed with fill colour ' + layer.options.fillColor);
 
     if (layer.options.fillColor == unvisitedColor) {
+
       layer.setStyle({ fillColor: plannedColor });
+      visitedStatus.set(layer.feature.properties.iso_a3, 1);
+
     } else if (layer.options.fillColor == plannedColor) {
+      
       layer.setStyle({ fillColor: visitedColor });
+      visitedStatus.set(layer.feature.properties.iso_a3, 2);
+
     } else if (layer.options.fillColor == visitedColor) {
+
       layer.setStyle({ fillColor: unvisitedColor });
+      visitedStatus.delete(layer.feature.properties.iso_a3);
+
     }
+
+    localStorage.visitedStatus = JSON.stringify(Array.from(visitedStatus.entries()));
+
+    console.log('Storage updated: ' + localStorage.visitedStatus);
 
   });
 }
 
 function featureSetStyle(feature) {
-  return {
-    fillColor: unvisitedColor
-    // fillColor: feature.properties.fillColor
-  };
+  if (visitedStatus.get(feature.properties.iso_a3) == 1) {
+    return {
+      fillColor: plannedColor
+    };
+  } else if (visitedStatus.get(feature.properties.iso_a3) == 2) {
+    return {
+      fillColor: visitedColor
+    };
+  } else {
+    return {
+      fillColor: unvisitedColor
+    };
+  }
 }
 
 const geojson = L.geoJson(countries, {
