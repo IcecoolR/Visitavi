@@ -43,7 +43,7 @@ const map = L.map('map', {
   center: [47.040182144806664, 9.667968750000002],
   zoom: 3,
   minZoom: 2,
-  maxZoom: 20
+  maxZoom: 13
 });
 
 var bounds = L.latLngBounds(
@@ -151,7 +151,7 @@ const resetMapBtnHandler = (e) => {
       onEachFeature: featureClickHandler,
       style: featureSetStyle
     }).addTo(map);
-    
+
   }
 }
 
