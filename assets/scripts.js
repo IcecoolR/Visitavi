@@ -40,7 +40,7 @@ aboutBtn.addEventListener("keydown", aboutBtnHandler);
 /* Section for interactive map */
 
 const map = L.map('map', {
-  center: [47.040182144806664, 9.667968750000002],
+  center: [35, 0],
   zoom: 3,
   minZoom: 2,
   maxZoom: 13

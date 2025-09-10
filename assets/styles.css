@@ -7,6 +7,11 @@ body {
     font-family: monospace;
 }
 
+h1 {
+    margin: 0rem;
+    padding: 0.5rem 0.25rem;
+}
+
 h3 {
     padding: 0.1rem 0rem;
 }
@@ -75,14 +80,17 @@ button:hover, button:focus {
 }
 
 .leaflet-container {
-    height: 500px;
+    height: 600px;
     width: 100%;
     max-width: 100%;
     max-height: 100%;
 }
 
 .resetMapbtn{
-    padding: 0.5rem 1rem; 
+    padding: 0.5rem 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
@@ -95,20 +103,13 @@ button:hover, button:focus {
         gap: 2rem;
     }
 
-    button {
-        padding: 1.5rem 2rem;
-    }
-
-    button:hover, button:focus {
-        transform: scale(1.2);
-    }
-
     .content {
+        max-width: 70rem;
         padding: 1rem 1rem;
     }
 
     .leaflet-container {
-        height: 600px;
+        height: 700px;
     }
 
 }
@@ -116,18 +117,10 @@ button:hover, button:focus {
 /* Desktop Styles */
 
 @media screen and (min-width: 1000px) {
-
-    nav{
-        gap: 3rem;
-    }
-    
-    button:hover, button:focus {
-        transform: scale(1.4);
-    }
     
     .content {
-        max-width: 70rem;
-        padding: 1rem 6rem;
+        max-width: 80rem;
+        padding: 1rem 4rem;
     }
 
     .leaflet-container {
