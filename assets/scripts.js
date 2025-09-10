@@ -2,6 +2,7 @@
 
 const mapViewBtn = document.getElementById("mapViewBtn");
 const aboutBtn = document.getElementById("aboutBtn");
+const resetMapbtn = document.getElementById("resetMapbtn");
 
 const mapViewSection = document.getElementById("mapViewSection");
 const aboutSection = document.getElementById("aboutSection");
@@ -29,13 +30,11 @@ const aboutBtnHandler = (e) => {
   }
 }
 
-
 mapViewBtn.addEventListener("click", mapViewBtnHandler);
 mapViewBtn.addEventListener("keydown", mapViewBtnHandler);
 
 aboutBtn.addEventListener("click", aboutBtnHandler);
 aboutBtn.addEventListener("keydown", aboutBtnHandler);
-
 
 
 /* Section for interactive map */
@@ -82,7 +81,8 @@ const positronLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_only_
 }).addTo(map);
 
 
-// Countries
+/* Section for countries */
+
 function featureClickHandler(feature, layer) {
   layer.on('click', function (e) {
 
@@ -129,7 +129,7 @@ function featureSetStyle(feature) {
   }
 }
 
-const geojson = L.geoJson(countries, {
+var geojson = L.geoJson(countries, {
   onEachFeature: featureClickHandler,
   style: featureSetStyle
 }).addTo(map);
@@ -138,3 +138,22 @@ const geojson = L.geoJson(countries, {
 // for (let i = 0; i < countries.features.length; i++) {
 //   console.log(countries.features[i].properties.iso_a3);
 // }
+
+
+const resetMapBtnHandler = (e) => {
+  if (e.type == "click" || e.code == "Enter" || e.code == "NumpadEnter") {
+    visitedStatus.clear();
+    localStorage.clear();
+
+    map.removeLayer(geojson);
+
+    geojson = L.geoJson(countries, {
+      onEachFeature: featureClickHandler,
+      style: featureSetStyle
+    }).addTo(map);
+    
+  }
+}
+
+resetMapbtn.addEventListener("click", resetMapBtnHandler);
+resetMapbtn.addEventListener("keydown", resetMapBtnHandler);
