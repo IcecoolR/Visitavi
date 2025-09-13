@@ -185,6 +185,8 @@ function generateStats() {
 
   percentComplete.textContent = Number.parseFloat((placesVisited.size / countries.features.length *100).toFixed(2)) + '%';
 
+  document.getElementById("progressBar").style.width = percentComplete.textContent;
+
 }
 
 generateStats();
