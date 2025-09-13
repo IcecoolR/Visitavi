@@ -11,6 +11,10 @@ var visitedStatus = new Map();
 
 if (localStorage.visitedStatus) { visitedStatus = new Map(JSON.parse(localStorage.visitedStatus)); }
 
+const totalPlacesVisited = document.getElementById("totalPlacesVisited");
+const totalPlaces = document.getElementById("totalPlaces");
+const percentComplete = document.getElementById("percentComplete");
+
 var unvisitedColor = '#4169E1';
 var plannedColor = '#FEB204';
 var visitedColor = '#008000';
@@ -109,6 +113,8 @@ function featureClickHandler(feature, layer) {
 
     localStorage.visitedStatus = JSON.stringify(Array.from(visitedStatus.entries()));
 
+    generateStats();
+
     console.log('Storage updated: ' + localStorage.visitedStatus);
 
   });
@@ -140,6 +146,8 @@ const resetMapBtnHandler = (e) => {
     visitedStatus.clear();
     localStorage.clear();
 
+    generateStats();
+
     map.removeLayer(geojson);
 
     geojson = L.geoJson(countries, {
@@ -155,10 +163,28 @@ resetMapbtn.addEventListener("keydown", resetMapBtnHandler);
 
 
 // For debuging countries purposes:
-// console.log(countries.features.length);
 // for (let i = 0; i < countries.features.length; i++) {
-//   if ( countries.features[i].properties.type.toString() != "Sovereign country" && countries.features[i].properties.type.toString() != "Country"  ) {
-//       console.log(countries.features[i].properties.name);
-//   }
-//   // console.log(countries.features[i].properties.name);
+//   // if ( countries.features[i].properties.type.toString() != "Sovereign country" && countries.features[i].properties.type.toString() != "Country"  ) {
+//   //     console.log(countries.features[i].properties.name);
+//   // }
+//   console.log(countries.features[i].properties.region_un);
 // }
+
+
+/* Section for stats */
+
+function generateStats() {
+
+  let placesVisited = new Map(
+    [...visitedStatus.entries()].filter(([key, value]) => value == "2")
+  );
+
+  totalPlacesVisited.textContent = placesVisited.size;
+
+  totalPlaces.textContent = countries.features.length;
+
+  percentComplete.textContent = Number.parseFloat((placesVisited.size / countries.features.length *100).toFixed(2)) + '%';
+
+}
+
+generateStats();
