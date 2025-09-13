@@ -135,12 +135,6 @@ var geojson = L.geoJson(countries, {
   style: featureSetStyle
 }).addTo(map);
 
-console.log(countries.features.length);
-for (let i = 0; i < countries.features.length; i++) {
-  console.log(countries.features[i].properties.iso_a3);
-}
-
-
 const resetMapBtnHandler = (e) => {
   if (e.type == "click" || e.code == "Enter" || e.code == "NumpadEnter") {
     visitedStatus.clear();
@@ -158,3 +152,13 @@ const resetMapBtnHandler = (e) => {
 
 resetMapbtn.addEventListener("click", resetMapBtnHandler);
 resetMapbtn.addEventListener("keydown", resetMapBtnHandler);
+
+
+// For debuging countries purposes:
+// console.log(countries.features.length);
+// for (let i = 0; i < countries.features.length; i++) {
+//   if ( countries.features[i].properties.type.toString() != "Sovereign country" && countries.features[i].properties.type.toString() != "Country"  ) {
+//       console.log(countries.features[i].properties.name);
+//   }
+//   // console.log(countries.features[i].properties.name);
+// }
