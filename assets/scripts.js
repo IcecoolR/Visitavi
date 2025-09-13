@@ -90,9 +90,9 @@ const positronLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_only_
 function featureClickHandler(feature, layer) {
   layer.on('click', function (e) {
 
-    console.log('');
-    console.log(e.latlng);
-    console.log(layer.feature.properties.name + '/' + layer.feature.properties.iso_a3 + ' pressed with fill colour ' + layer.options.fillColor);
+    // console.log('');
+    // console.log(e.latlng);
+    // console.log(layer.feature.properties.name + '/' + layer.feature.properties.iso_a3 + ' pressed with fill colour ' + layer.options.fillColor);
 
     if (layer.options.fillColor == unvisitedColor) {
 
@@ -115,7 +115,7 @@ function featureClickHandler(feature, layer) {
 
     generateStats();
 
-    console.log('Storage updated: ' + localStorage.visitedStatus);
+    // console.log('Storage updated: ' + localStorage.visitedStatus);
 
   });
 }
