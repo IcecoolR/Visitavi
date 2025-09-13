@@ -10,7 +10,7 @@ Visitavi is an interactive web tool that allows users to explore and mark places
 - Local storage for travel data
 
 ### Built With:
-- **Leaflet.js**: A leading JavaScript library for interactive maps. [Learn more](https://leafletjs.com/index.html)
+- **Leaflet.js**: A leading JavaScript library for interactive maps - [Learn more](https://leafletjs.com/)
 - **GeoJSON Data**: Country boundaries data sourced from [GeoJSON Maps](https://geojson-maps.kyd.au/)
 
 ### Live Demo:
