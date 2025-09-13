@@ -30,14 +30,14 @@ button {
     border: 0.2rem solid;
     border-radius: 1rem;
     padding: 1rem 1.5rem;
-    background-color: #1ABC9C;
+    background-color: #1CCEAB;
     border-color: #FFFFFF;
     transition: all 0.2s ease;
     font-size: 1.3rem;
 }
 
 button:hover, button:focus {
-    background-color: #17A18F;
+    background-color: #0E5D52;
     color: #FFFFFF;
     transform: scale(1.1);
     cursor: pointer;
@@ -61,7 +61,7 @@ button:hover, button:focus {
 }
 
 .section {
-    background-color: #1ABC9C;
+    background-color: #1CCEAB;
     border-radius: 20px;
     padding: 30px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
@@ -88,13 +88,13 @@ button:hover, button:focus {
 
 #totalProgress {
     width: 100%;
-    background-color: grey;
+    background-color: #778899;
 }
 
 #progressBar {
     width: 20%;
     height: 30px;
-    background-color: green;
+    background-color: #228B22;
 }
 
 .resetMapbtn{
