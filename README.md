@@ -5,9 +5,9 @@ Visitavi is an interactive web tool that allows users to explore and mark places
 ### Features:
 - Interactive world map with zoom and pan
 - Real-time statistics tracking your travel progress
-- Visual legend for quick status check
+- Visual legend for place borders
 - Responsive on all devices
-- Local storage for travel data
+- Local storage to record travel data
 
 ### Built With:
 - **Leaflet.js**: A leading JavaScript library for interactive maps - [Learn more](https://leafletjs.com/)
