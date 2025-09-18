@@ -96,10 +96,11 @@ button:hover, button:focus {
     width: 100%;
     background-color: #778899;
     border-radius: 20px;
+    overflow: hidden;
 }
 
 #progressBar {
-    width: 20%;
+    width: 0;
     height: 30px;
     background-color: #228B22;
     border-radius: 20px;
