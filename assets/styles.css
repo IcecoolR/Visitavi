@@ -89,12 +89,14 @@ button:hover, button:focus {
 #totalProgress {
     width: 100%;
     background-color: #778899;
+    border-radius: 20px;
 }
 
 #progressBar {
     width: 20%;
     height: 30px;
     background-color: #228B22;
+    border-radius: 20px;
 }
 
 .resetMapbtn{
