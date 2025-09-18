@@ -87,6 +87,11 @@ button:hover, button:focus {
     border-radius: 10px;
 }
 
+.leaflet-interactive {
+    stroke-width: 1;
+    stroke: #333333;
+}
+
 #totalProgress {
     width: 100%;
     background-color: #778899;
