@@ -3,11 +3,11 @@
 Visitavi is an interactive web tool that allows users to explore and mark places they've visited or plan to visit. Using Leaflet for dynamic maps and GeoJSON data for country boundaries, Visitavi provides an engaging way to visualize your travel history and future destinations.
 
 ### Features:
-- Interactive world map with zoom and pan
-- Real-time statistics tracking your travel progress
-- Visual legend for place borders
-- Responsive on all devices
-- Local storage to record travel data
+- Interactive world map with zoom and pan functionality
+- Track your travel progress in real-time with dynamic statistics
+- Visual legend for an instant status overview
+- Responsive design, optimized for all screen sizes
+- Data persistence: Your travel progress is saved locally
 
 ### Built With:
 - **Leaflet.js**: A leading JavaScript library for interactive maps - [Learn more](https://leafletjs.com/)
