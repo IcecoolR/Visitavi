@@ -87,7 +87,7 @@ const positronLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only
 // Add print option
 const printer = L.easyPrint({
   title: 'Print Map',
-  filename: 'Visitavi PNG',
+  filename: 'Visitavi',
   exportOnly: true,
   hideControlContainer: true
 }).addTo(map);
