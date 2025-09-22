@@ -77,7 +77,7 @@ const cartodbAttribution = '&copy; <a href="https://www.openstreetmap.org/copyri
 // }).addTo(map);
 
 // Adds country labels
-const positronLabels = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
+const positronLabels = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}.png', {
   noWrap: true,
   bounds: [[-90, -180], [90, 180]],  
   attribution: cartodbAttribution,
